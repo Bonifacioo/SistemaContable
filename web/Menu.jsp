@@ -5,11 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> SISTEMAS CONTABLES</title>
         <!-- Bootstrap Styles-->
-        <link href="../assets/css/bootstrap.css" rel="stylesheet" />
+        <link href="assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FontAwesome Styles-->
-        <link href="../assets/css/font-awesome.css" rel="stylesheet" />
+        <link href="assets/css/font-awesome.css" rel="stylesheet" />
         <!-- Custom Styles-->
-        <link href="../assets/css/custom-styles.css" rel="stylesheet" />
+        <link href="assets/css/custom-styles.css" rel="stylesheet" />
         <!-- Google Fonts-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     </head>
@@ -241,7 +241,7 @@
                     <ul class="nav" id="main-menu">
 
                         <li>
-                            <a class="active-menu" href="Menu.jsp"><i class="fa fa-dashboard"></i>INICIO</a>
+                            <a class="active-menu" href="Inicio.jsp"><i class="fa fa-dashboard"></i>INICIO</a>
                         </li>
                         <li>
                             <a href="NuevaCuenta.jsp"><i class="fa fa-bar-chart-o"></i> Cuenta</a>
@@ -296,14 +296,22 @@
             <!-- /. WRAPPER  -->
             <!-- JS Scripts-->
             <!-- jQuery Js -->
-            <script src="../assets/js/jquery-1.10.2.js"></script>
+            <script src="assets/js/jquery-1.10.2.js"></script>
             <!-- Bootstrap Js -->
-            <script src="../assets/js/bootstrap.min.js"></script>
+            <script src="assets/js/bootstrap.min.js"></script>
             <!-- Metis Menu Js -->
-            <script src="../assets/js/jquery.metisMenu.js"></script>
-            <!-- Custom Js -->
-            <script src="../assets/js/custom-scripts.js"></script>
+            <script src="assets/js/jquery.metisMenu.js"></script>
 
+            <!-- Custom Js -->
+            <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+            <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('#dataTables-example').dataTable();
+                });
+            </script>
+            <!-- Custom Js -->
+            <script src="assets/js/custom-scripts.js"></script>
 
     </body>
 </html>

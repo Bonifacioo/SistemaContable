@@ -43,9 +43,9 @@ Contributor(s):
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
     <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/sistemacontable</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/BDsistemasContables</property>
     <property name="hibernate.connection.username">postgres</property>
-    <property name="hibernate.connection.password">BONIFACIO</property>
+    <property name="hibernate.connection.password">1234</property>
     <mapping class="Entidades.Cuentas"/>
     <mapping class="Entidades.Transacciones"/>
   </session-factory>

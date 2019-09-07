@@ -19,7 +19,7 @@ public class Conexion {
       if (cnx == null) {
          try {
             Class.forName("org.postgresql.Driver");
-            cnx = DriverManager.getConnection("jdbc:postgresql://localhost/sistemacontable", "postgres", "BONIFACIO");
+            cnx = DriverManager.getConnection("jdbc:postgresql://localhost/BDsistemasContables", "postgres", "1234");
          } catch (SQLException ex) {
             throw new SQLException(ex);
          } catch (ClassNotFoundException ex) {

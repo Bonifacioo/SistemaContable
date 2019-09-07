@@ -35,61 +35,61 @@ public class Controladorcuenta extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-//    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        response.setContentType("text/html;charset=UTF-8");
-//        try (PrintWriter out = response.getWriter()) {
-//            RequestDispatcher despachador = null;
-//            String pagina = request.getServletPath();
-//            if (pagina.equals("/MostrarCuentas.do")) {
-//                 
-//                List<Cuentas> listaDeCuentas = new ArrayList<>();
-//                DaoCuenta  c=new DaoCuenta();
-//                listaDeCuentas=c.obtenerlistaCuentas();
-//                request.setAttribute("listaDeLugares",listaDeCuentas);
-//                System.out.println("ENTRO AL CONTROLAADOE DDE CUENTAS");
-//                despachador=request.getRequestDispatcher("CatalogoO/Menu/Menu.jsp");
-//            } 
-//       
-//            else if (pagina.equals("/AgregarLugar.do")) {
-//                
-//                int codigo=Integer.parseInt(request.getParameter("id_codigo"));
-//                String departamento=request.getParameter("id_departamento");
-//                String municipio=request.getParameter("id_municipio");
-//                Lugar lugar=new Lugar(codigo,departamento,municipio);
-//                DaoLugar  controllugar=new DaoLugar(lugar);
-//                controllugar.GuardarLugar();
-//                despachador=request.getRequestDispatcher("MostrarLugar.do");
-//            }else if (pagina.equals("/BorrarLugar.do")) {
-//                
-//                int  codigo= Integer.parseInt(request.getParameter("id_codigo"));
-//                Lugar lugar = new Lugar(codigo);
-//                DaoLugar controllugar = new DaoLugar(codigo);
-//                 controllugar.eliminarLugar(lugar);
-//                despachador = request.getRequestDispatcher("MostrarLugar.do");
-//            }else if (pagina.equals("/ModificarLugar.do")) {
-//                Lugar lugar= new Lugar();
-//                lugar.setCodigo(Integer.parseInt(request.getParameter("id_codigo")));
-//                DaoLugar controllugar = new DaoLugar(lugar.getCodigo());
-//                lugar=controllugar .obtenerLugar();
-//                request.setAttribute("lugares",lugar);
-//                despachador=request.getRequestDispatcher("Catalogos/Lugares/modificarLugar.jsp");
-//                
-//            } else if (pagina.equals("/UpdateLugar.do")) {
-//                int codigo=Integer.parseInt(request.getParameter("id_codigo"));
-//                String departamento=request.getParameter("id_departamento");
-//                String municipio=request.getParameter("id_municipio");
-//                Lugar lugar=new Lugar(codigo,departamento,municipio);
-//                
-//                
-//                DaoLugar  controllugar=new DaoLugar ();
-//                controllugar.actualizarLugar(lugar);
-//                despachador = request.getRequestDispatcher("MostrarLugar.do");
-//            
-//            }
-//            despachador.forward(request, response);
-//        }
-//    }
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            RequestDispatcher despachador = null;
+            String pagina = request.getServletPath();
+            if (pagina.equals("/MostrarCuentas.do")) {
+                 
+                List<Cuentas> listaDeCuentas = new ArrayList<>();
+                DaoCuenta  c=new DaoCuenta();
+                listaDeCuentas=c.obtenerlistaCuentas();
+                request.setAttribute("listaDeLugares",listaDeCuentas);
+                System.out.println("ENTRO AL CONTROLAADOE DDE CUENTAS");
+                despachador=request.getRequestDispatcher("CatalogoO/Menu/Menu.jsp");
+            } 
+       
+            else if (pagina.equals("/AgregarLugar.do")) {
+                
+                int codigo=Integer.parseInt(request.getParameter("id_codigo"));
+                String departamento=request.getParameter("id_departamento");
+                String municipio=request.getParameter("id_municipio");
+                Lugar lugar=new Lugar(codigo,departamento,municipio);
+                DaoLugar  controllugar=new DaoLugar(lugar);
+                controllugar.GuardarLugar();
+                despachador=request.getRequestDispatcher("MostrarLugar.do");
+            }else if (pagina.equals("/BorrarLugar.do")) {
+                
+                int  codigo= Integer.parseInt(request.getParameter("id_codigo"));
+                Lugar lugar = new Lugar(codigo);
+                DaoLugar controllugar = new DaoLugar(codigo);
+                 controllugar.eliminarLugar(lugar);
+                despachador = request.getRequestDispatcher("MostrarLugar.do");
+            }else if (pagina.equals("/ModificarLugar.do")) {
+                Lugar lugar= new Lugar();
+                lugar.setCodigo(Integer.parseInt(request.getParameter("id_codigo")));
+                DaoLugar controllugar = new DaoLugar(lugar.getCodigo());
+                lugar=controllugar .obtenerLugar();
+                request.setAttribute("lugares",lugar);
+                despachador=request.getRequestDispatcher("Catalogos/Lugares/modificarLugar.jsp");
+                
+            } else if (pagina.equals("/UpdateLugar.do")) {
+                int codigo=Integer.parseInt(request.getParameter("id_codigo"));
+                String departamento=request.getParameter("id_departamento");
+                String municipio=request.getParameter("id_municipio");
+                Lugar lugar=new Lugar(codigo,departamento,municipio);
+                
+                
+                DaoLugar  controllugar=new DaoLugar ();
+                controllugar.actualizarLugar(lugar);
+                despachador = request.getRequestDispatcher("MostrarLugar.do");
+            |
+            }
+            despachador.forward(request, response);
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
