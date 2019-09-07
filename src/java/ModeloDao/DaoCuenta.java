@@ -1,0 +1,128 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ModeloDao;
+
+import Entidades.Cuentas;
+import HibernateUtil.HibernateUtil;
+import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+/**
+ *
+ * @author v00
+ */
+public class DaoCuenta {
+    private SessionFactory sesFact;
+    private Session ses;
+    private Transaction tra;
+    
+    private int codigo;
+    private int filasAfectadas=0;
+    
+    Cuentas cuenta=new  Cuentas();
+
+    public DaoCuenta(Cuentas cuenta) {
+        this.cuenta=cuenta;
+    }
+
+    public DaoCuenta(int  codigo) {
+        this.codigo = codigo;
+    }
+
+    public DaoCuenta () {
+    }
+    
+    
+    
+    private void iniciaOperacion()throws HibernateException{
+        sesFact=HibernateUtil.getSessionFactory();
+        ses=sesFact.openSession();
+        tra=ses.beginTransaction();
+    }
+    
+    private void manejaException(HibernateException he)throws HibernateException{
+        tra.rollback();
+        throw new HibernateException("Ocrurrio un error en la capa de acceso a datos",he);
+    }
+    
+   public void GuardarCuentas()throws HibernateException
+    {
+        try {
+            iniciaOperacion();
+            ses.save(cuenta);
+            tra.commit();
+        } catch (HibernateException he) {
+            manejaException(he);
+            throw he;
+        }finally{
+            ses.close();
+        }
+    }
+    
+      public void eliminarCuentas(Cuentas cuentas)throws HibernateException
+    {
+        try {
+            iniciaOperacion();
+            ses.delete(cuentas);
+            tra.commit();
+        } catch (HibernateException he) {
+            manejaException(he);
+            throw he;
+        }finally{
+            ses.close();
+        }
+    }
+       
+   public Cuentas obtenerCuentas()throws HibernateException
+    {
+        try {
+            iniciaOperacion();
+            cuenta=(Cuentas)ses.get(Cuentas.class,codigo);
+
+        } catch (HibernateException he) {
+            manejaException(he);
+            throw he;
+        }finally{
+            ses.close();
+        }
+        return cuenta;
+    }
+   
+      public List<Cuentas> obtenerlistaCuentas()throws HibernateException
+    {
+        List<Cuentas>listaDeObra=null;
+        try {
+            iniciaOperacion();
+            listaDeObra=ses.createQuery("SELECT FROM cuentas").list();
+
+        } catch (HibernateException he) {
+            manejaException(he);
+            throw he;
+        }finally{
+            ses.close();
+        }
+        return listaDeObra;
+    }
+      
+     public void actualizarObra(Cuentas cuentas) throws HibernateException {
+        try {
+            iniciaOperacion();
+            ses.update(cuentas);
+            tra.commit();
+        } catch (HibernateException he) {
+            manejaException(he);
+            throw he;
+        } finally {
+            ses.close();
+        }
+    }
+     
+     
+    
+}
