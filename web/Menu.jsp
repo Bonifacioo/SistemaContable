@@ -1,39 +1,19 @@
-<%-- 
-    Document   : Menu
-    Created on : 29-ago-2019, 20:07:46
-    Author     : dell
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title> SISTEMAS CONTABLES</title>
         <!-- Bootstrap Styles-->
         <link href="../assets/css/bootstrap.css" rel="stylesheet" />
         <!-- FontAwesome Styles-->
         <link href="../assets/css/font-awesome.css" rel="stylesheet" />
-        <!-- Morris Chart Styles-->
-        <link href="../assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
         <!-- Custom Styles-->
         <link href="../assets/css/custom-styles.css" rel="stylesheet" />
         <!-- Google Fonts-->
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-        <link rel="../jajajajastylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
-
-
-
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.8.0/sweetalert2.min.css" rel="stylesheet" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.8.0/sweetalert2.min.js"></script>
-        <link rel="../Js/alertas.js">
-
-
-        <title>SISTEMAS CONTABLES</title>
-
     </head>
-    <body id="cuerpo" onload="load();">
+    <body>
         <div id="wrapper">
             <nav class="navbar navbar-default top-navbar" role="navigation">
                 <div class="navbar-header">
@@ -43,7 +23,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><strong>MONICA 10.0</strong></a>
+                    <a class="navbar-brand" href=""><strong>SIC</strong></a>
                 </div>
 
                 <ul class="nav navbar-top-links navbar-right">
@@ -257,17 +237,14 @@
             </nav>
             <!--/. NAV TOP  -->
             <nav class="navbar-default navbar-side" role="navigation">
-                <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
 
                         <li>
                             <a class="active-menu" href="Menu.jsp"><i class="fa fa-dashboard"></i>INICIO</a>
-                            <a href="../Catalogo/Cuenta/NuevaCuenta.jsp"><i class="fa fa-archive"></i>Agregar Cuenta</a>
-                            
                         </li>
                         <li>
-                            <a href="../Catalogo/Cuenta/NuevaCuenta.jsp"><i class="fa fa-bar-chart-o"></i> Cuenta</a>
+                            <a href="NuevaCuenta.jsp"><i class="fa fa-bar-chart-o"></i> Cuenta</a>
                         </li>
 
 
@@ -310,81 +287,23 @@
                         </li>
                     </ul>
 
+
                 </div>
 
             </nav>
             <!-- /. NAV SIDE  -->
 
-           
-        <!-- /. PAGE WRAPPER  -->
+            <!-- /. WRAPPER  -->
+            <!-- JS Scripts-->
+            <!-- jQuery Js -->
+            <script src="../assets/js/jquery-1.10.2.js"></script>
+            <!-- Bootstrap Js -->
+            <script src="../assets/js/bootstrap.min.js"></script>
+            <!-- Metis Menu Js -->
+            <script src="../assets/js/jquery.metisMenu.js"></script>
+            <!-- Custom Js -->
+            <script src="../assets/js/custom-scripts.js"></script>
 
 
-    </div>
-
-
-
-    <script type="text/javascript">
-
-
-        var tags;
-
-        function load() {
-            tags = document.getElementsByTagName('li');
-        }
-        function test(frm) {
-
-            var elemento = document.createElement("li");
-            var combo = document.getElementById("tipo");
-            var selected = combo.options[combo.selectedIndex].text;
-            var index = combo.selectedIndex;
-            if (index != 0) {
-                var text = document.createTextNode(frm.descripcion.value);
-                elemento.appendChild(text);
-
-                if (index == 1) {
-                    document.getElementById("activo").appendChild(elemento);
-
-                } else if (index == 2) {
-                    document.getElementById("pasivo").appendChild(elemento);
-
-                }
-                load();
-            } else {
-                alert('Escojer que tipo de cuenta ')
-            }
-
-        }
-
-        $('#Eliminar').click(function () {
-            swal({
-                title: "Seguro que quieres hacer esto?",
-                text: "Esta acción ya no se podrá deshacer, Así que piénsalo bien.",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, estoy seguro',
-                cancelButtonText: "Cancelar"
-            });
-        });
-
-
-
-        < script src = "assets/js/jquery-1.10.2.js" ></script>
-    <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- DATA TABLE SCRIPTS -->
-    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-<script>
-                    $(document).ready(function () {
-        $('#dataTables-example').dataTable();
-        });
-                </script>
-    <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script>
-
-</body>
+    </body>
 </html>

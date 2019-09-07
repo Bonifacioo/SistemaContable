@@ -1,9 +1,3 @@
-<%-- 
-    Document   : newjsp
-    Created on : 06-sep-2019, 13:08:27
-    Author     : BONIFACIO
---%>
-
 <%@page import="java.io.File"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -29,12 +23,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.8.0/sweetalert2.min.js"></script>
         <link rel="../Js/alertas.js">
 
-        <%@include file="../../Menu/Menu.jsp" %><%--para llamar al menu e Inculirlo en esta vista --%>
+        
         
     </head>
     <body>
         
-        
+        <%@include file="Menu.jsp" %><%--para llamar al menu e Inculirlo en esta vista --%>
         
          <div id="page-wrapper">
 
@@ -133,6 +127,5 @@
                     </div>
                 </div>
             </div>
-
     </body>
 </html>
